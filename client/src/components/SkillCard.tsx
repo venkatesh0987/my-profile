@@ -39,10 +39,11 @@ export function SkillCard({ category, icon, skills, index = 0 }: SkillCategory &
       <ul className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <li
-            key={skill}
-            className="rounded-full border border-ink/10 px-3 py-1 text-xs text-ink/70 dark:border-paper/10 dark:text-paper/70"
+            key={skill.name}
+            className="flex items-center gap-1.5 rounded-full border border-ink/10 px-3 py-1 text-xs text-ink/70 dark:border-paper/10 dark:text-paper/70"
           >
-            {skill}
+            <Icon name={skill.icon} className="size-3.5 shrink-0" />
+            {skill.name}
           </li>
         ))}
       </ul>
