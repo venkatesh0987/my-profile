@@ -42,7 +42,7 @@ export function SkillCard({ category, icon, skills, index = 0 }: SkillCategory &
             key={skill.name}
             className="flex items-center gap-1.5 rounded-full border border-ink/10 px-3 py-1 text-xs text-ink/70 dark:border-paper/10 dark:text-paper/70"
           >
-            <Icon name={skill.icon} className="size-3.5 shrink-0" />
+            <Icon name={skill.icon} className="size-3.5 shrink-0" color={skill.color} />
             {skill.name}
           </li>
         ))}

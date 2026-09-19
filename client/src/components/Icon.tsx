@@ -55,6 +55,8 @@ import {
   SiRender,
   SiResend,
   SiJenkins,
+  SiElasticsearch,
+  SiRedis,
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 
@@ -130,6 +132,8 @@ const icons = {
   jenkins: SiJenkins,
   terminal: Terminal,
   "folder-sync": FolderSync,
+  elasticsearch: SiElasticsearch,
+  redis: SiRedis,
 } satisfies Record<string, IconComponent>;
 
 export type IconName = keyof typeof icons;
@@ -138,9 +142,17 @@ type IconProps = {
   name: IconName;
   className?: string;
   strokeWidth?: number;
+  color?: string;
 };
 
-export function Icon({ name, className, strokeWidth = 1.75 }: IconProps) {
+export function Icon({ name, className, strokeWidth = 1.75, color }: IconProps) {
   const Component = icons[name];
-  return <Component className={className} strokeWidth={strokeWidth} aria-hidden="true" />;
+  return (
+    <Component
+      className={className}
+      strokeWidth={strokeWidth}
+      style={color ? { color } : undefined}
+      aria-hidden="true"
+    />
+  );
 }
